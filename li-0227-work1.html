@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free & Love · 自由与爱</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .bg-hero {
+        background-image: url('./assets/1.jpg');
+      }
+      .bg-interlude {
+        background-image: url('./assets/2.jpg');
+      }
+      .text-glow {
+        text-shadow: 0 0 12px #e8b8ff, 0 0 24px #b96fff66;
+      }
+      .card-glow {
+        box-shadow: 0 0 18px #b96fff33;
+      }
+      .animate-star {
+        animation: twinkle 3s ease-in-out infinite;
+      }
+      .animate-nebula {
+        animation: nebulaMove 22s ease-in-out infinite alternate;
+      }
+      .animate-float-in {
+        animation: floatIn 1.6s ease-out both;
+      }
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes nebulaMove {
+      0% { background-position: 50% 40%; }
+      100% { background-position: 50% 60%; }
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#140c2b',
+            deepPurple: '#241552',
+            nebulaPurple: '#693cad',
+            starPink: '#ffb8ee',
+            softViolet: '#c97bff',
+          },
+          fontFamily: {
+            serif: ['Noto Serif SC', 'serif'],
+            sans: ['Noto Sans SC', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-night text-white font-sans overflow-x-hidden">
+
+  <!-- 导航栏 -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-night/40 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#hero" class="text-xl font-serif text-starPink text-glow">Free & Love</a>
+      <div class="hidden md:flex gap-8 text-sm">
+        <a href="#about" class="hover:text-starPink transition-colors">关于</a>
+        <a href="#freedom" class="hover:text-starPink transition-colors">自由</a>
+        <a href="#love" class="hover:text-starPink transition-colors">爱</a>
+        <a href="#collection" class="hover:text-starPink transition-colors">收藏</a>
+        <a href="#message" class="hover:text-starPink transition-colors">留言</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 首屏 Hero：第一张紫粉星空 -->
+  <section id="hero" class="min-h-screen w-full bg-hero bg-cover bg-center animate-nebula flex items-center justify-center relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-night/40 via-night/60 to-night"></div>
+
+    <!-- 模拟星光 -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <span class="absolute w-1 h-1 bg-white rounded-full top-[18%] left-[22%] animate-star"></span>
+      <span class="absolute w-1 h-1 bg-white rounded-full top-[40%] left-[75%] animate-star delay-1000"></span>
+      <span class="absolute w-1 h-1 bg-white rounded-full top-[65%] left-[15%] animate-star delay-1500"></span>
+      <span class="absolute w-1 h-1 bg-white rounded-full top-[28%] left-[85%] animate-star delay-700"></span>
+      <span class="absolute w-1.5 h-1.5 bg-starPink rounded-full top-[52%] left-[42%] animate-star"></span>
+      <span class="absolute w-1 h-1 bg-white rounded-full top-[74%] left-[60%] animate-star delay-500"></span>
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-3xl animate-float-in">
+      <p class="text-xs tracking-[0.4em] text-starPink/70 mb-6">F R E E &nbsp; & &nbsp; L O V E</p>
+      <h1 class="text-[clamp(3rem,10vw,6rem)] font-serif font-semibold text-glow mb-4">Free & Love</h1>
+      <p class="text-lg md:text-xl text-starPink/90 mb-6">在辽阔的夜里，勇敢成为自己，也勇敢靠近爱。</p>
+      <p class="text-white/70 mb-10">自由不是逃离，而是终于敢真实地活着。</p>
+      <a href="#about" class="inline-block border border-softViolet/60 px-7 py-3 rounded-full hover:bg-softViolet/20 transition-all">进入我的宇宙</a>
+      <div class="mt-14 text-xs tracking-widest text-white/50">FREEDOM · LOVE · DREAMS · UNIVERSE</div>
+    </div>
+  </section>
+
+  <!-- 关于板块 -->
+  <section id="about" class="py-24 px-6 bg-night">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-10 text-glow">This is my little universe.</h2>
+      <div class="bg-deepPurple/30 rounded-2xl p-8 card-glow backdrop-blur-sm">
+        <p class="text-white/85 leading-relaxed">
+          我相信，<br>
+          自由是心灵的方向，<br>
+          爱是生命的光。
+          <br><br>
+          这个页面，收藏我对世界的感受、对生活的热爱，以及那些想在夜里说给自己听的话。
+          它不完美，但它真实。
+        </p>
+        <div class="mt-8 text-starPink/80 text-sm">
+          ✦ 忠于内心 ✦ 保持柔软 ✦ 永远向往旷野与星光
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 星空插图过渡：第二张紫粉星空 -->
+  <section class="relative h-[85vh] w-full bg-interlude bg-cover bg-center animate-nebula overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-night via-night/50 to-night"></div>
+
+    <div class="absolute inset-0 flex items-center justify-center text-center px-6">
+      <div class="animate-float-in">
+        <p class="text-xs tracking-[0.4em] text-starPink/70 mb-4">BETWEEN STARS</p>
+        <h2 class="text-[clamp(2rem,7vw,4rem)] font-serif text-glow mb-4">有些夜晚，只属于自己。</h2>
+        <p class="text-white/75 max-w-xl mx-auto">
+          把喧嚣留在身后，让星光慢慢落进心里。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Freedom 自由板块 -->
+  <section id="freedom" class="py-24 px-6 bg-night">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-3 text-glow">Freedom is not silence. It is courage.</h2>
+      <p class="text-white/60 mb-12">自由，是不被标签定义，拥有选择自己生活的勇气</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-deepPurple/30 p-6 rounded-xl card-glow backdrop-blur-sm hover:bg-deepPurple/40 transition">
+          <h3 class="text-xl text-starPink mb-3">独自奔赴旷野</h3>
+          <p class="text-white/75 text-sm leading-relaxed">一个人走路、看星空，脱离嘈杂的评价，找回属于自己的节奏。</p>
+        </div>
+
+        <div class="bg-deepPurple/30 p-6 rounded-xl card-glow backdrop-blur-sm hover:bg-deepPurple/40 transition">
+          <h3 class="text-xl text-starPink mb-3">坦然表达自我</h3>
+          <p class="text-white/75 text-sm leading-relaxed">不再害怕被评判，允许自己脆弱，也允许自己尽情发光。</p>
+        </div>
+
+        <div class="bg-deepPurple/30 p-6 rounded-xl card-glow backdrop-blur-sm hover:bg-deepPurple/40 transition">
+          <h3 class="text-xl text-starPink mb-3">拥有重新选择的权利</h3>
+          <p class="text-white/75 text-sm leading-relaxed">告别消耗自己的环境，主动走向让内心舒展、开阔的方向。</p>
+        </div>
+
+        <div class="bg-deepPurple/30 p-6 rounded-xl card-glow backdrop-blur-sm hover:bg-deepPurple/40 transition">
+          <h3 class="text-xl text-starPink mb-3">永远保有好奇</h3>
+          <p class="text-white/75 text-sm leading-relaxed">对未知保持期待，不停下探索世界的脚步。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Love 爱板块 -->
+  <section id="love" class="py-24 px-6 bg-night">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-3 text-glow">Love is the light that connects us all.</h2>
+      <p class="text-white/60 mb-12">爱是星辰之间的连线，把散落的我们温柔相连</p>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-deepPurple/30 p-6 rounded-xl backdrop-blur-sm card-glow">
+          <h3 class="text-lg text-starPink mb-2">自爱</h3>
+          <p class="text-white/75 text-sm">接纳全部的自己，是一切爱意的起点。</p>
+        </div>
+
+        <div class="bg-deepPurple/30 p-6 rounded-xl backdrop-blur-sm card-glow">
+          <h3 class="text-lg text-starPink mb-2">相伴之爱</h3>
+          <p class="text-white/75 text-sm">并肩望向同一片星空，沉默也温柔安心。</p>
+        </div>
+
+        <div class="bg-deepPurple/30 p-6 rounded-xl backdrop-blur-sm card-glow">
+          <h3 class="text-lg text-starPink mb-2">陪伴与知己</h3>
+          <p class="text-white/75 text-sm">有人读懂你的奇思，接纳你的所有情绪。</p>
+        </div>
+
+        <div class="bg-deepPurple/30 p-6 rounded-xl backdrop-blur-sm card-glow">
+          <h3 class="text-lg text-starPink mb-2">亲情的暖意</h3>
+          <p class="text-white/75 text-sm">默默托举你的温柔，是扎根心底的安稳。</p>
+        </div>
+
+        <div class="bg-deepPurple/30 p-6 rounded-xl backdrop-blur-sm card-glow">
+          <h3 class="text-lg text-starPink mb-2">热爱世间</h3>
+          <p class="text-white/75 text-sm">爱晚风、落日、星光，爱每一个细碎美好的瞬间。</p>
+        </div>
+
+        <div class="bg-deepPurple/30 p-6 rounded-xl backdrop-blur-sm card-glow">
+          <h3 class="text-lg text-starPink mb-2">善意微光</h3>
+          <p class="text-white/75 text-sm">陌生人之间短暂、真诚的温柔。</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <h3 class="text-2xl font-serif text-softViolet text-glow mb-4">Where freedom meets love</h3>
+        <p class="text-white/80 max-w-2xl mx-auto leading-relaxed">
+          自由让我成为我自己，<br>
+          爱让我敢把自己交付出去，奔赴另一种相遇。<br>
+          我既要勇敢地往前走，也要真诚地去爱。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 收藏板块 -->
+  <section id="collection" class="py-24 px-6 bg-night">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-10 text-glow">Things I love lately.</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-starPink mb-4 text-lg">✦ 珍藏句子</h4>
+          <ul class="space-y-3 text-white/75 text-sm">
+            <li>Live free, love deep.</li>
+            <li>Not everything has to make sense.</li>
+            <li>Be soft, but never weak.</li>
+            <li>Some nights are made for thinking.</li>
+            <li>先成为风，再拥抱星光。</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-starPink mb-4 text-lg">✦ 喜欢的碎片</h4>
+          <ul class="space-y-3 text-white/75 text-sm">
+            <li>星空、湖面、晚风、深夜的思绪</li>
+            <li>温柔的歌、缓慢的电影</li>
+            <li>独自散步，安静发呆</li>
+            <li>一切不被催促的时刻</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 留言板块 -->
+  <section id="message" class="py-24 px-6 bg-night">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-3 text-glow">Leave me a message.</h2>
+      <p class="text-white/60 mb-10">写下你关于自由与爱的瞬间，留下一颗属于你的星</p>
+
+      <div class="bg-deepPurple/30 rounded-2xl p-8 card-glow backdrop-blur">
+        <div class="space-y-5">
+          <input type="text" placeholder="你的昵称" class="w-full bg-night/60 border border-softViolet/40 rounded-lg px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-starPink transition">
+          <textarea rows="4" placeholder="想分享的话..." class="w-full bg-night/60 border border-softViolet/40 rounded-lg px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-starPink transition resize-none"></textarea>
+          <button class="w-full py-3 rounded-lg bg-softViolet/30 hover:bg-softViolet/50 border border-softViolet/50 transition">投递星光 ✦</button>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-white/10">
+          <p class="text-white/50 text-sm mb-4">过往星光：</p>
+          <div class="space-y-4 text-sm text-white/70">
+            <p>✦ Star：自由是终于敢坦然说“我不喜欢”。</p>
+            <p>✦ Luna：爱不是枷锁，是两个人共赴更辽阔的宇宙。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="py-14 px-6 bg-night text-center">
+    <p class="text-xl font-serif text-starPink text-glow mb-3">Stay free. Stay loving.</p>
+    <p class="text-white/40 text-sm">This page is made for freedom and love.</p>
+    <div class="mt-6 text-xs text-white/30">Free & Love © 2026</div>
+  </footer>
+
+  <!-- 平滑滚动 -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      })
+    })
+  </script>
+
+</body>
+</html>
